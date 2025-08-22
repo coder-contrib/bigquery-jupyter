@@ -1,6 +1,7 @@
 # Coder BigQuery Jupyter Template
 
-> ![NOTE] This is a sample template and the majority of this README, while still accurate, is written with AI. The template itself is written by the Coder team.
+> [!NOTE]
+> This is a sample template and the majority of this README, while still accurate, is written with AI. The template itself is written by the Coder team.
 
 A complete Coder workspace template for querying Google BigQuery from Jupyter notebooks with integrated GCP authentication.
 
