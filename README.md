@@ -42,22 +42,22 @@ coder external-auth access-token gcp
 ```
 This should return a valid access token.
 
-## 📚 Example Notebooks
+## 📚 Analysis Notebooks & Scripts
 
 ### 1. Basic Weather Analysis
-**File:** `example-weather-complete.ipynb`
+**File:** `basic-weather-analysis.ipynb`
 
-Complete starter example featuring:
+Complete starter notebook featuring:
 - ✅ Automatic requirements.txt installation and authentication setup
 - 📊 Basic GSOD dataset querying (500 records)
 - 🌡️ Temperature, precipitation, wind, and visibility analysis
 - 📈 Weather station distribution analysis
 - 🎨 Multiple visualization types
 
-### 2. Advanced Regional Temperature Analysis
-**File:** `example-temperature-regional-analysis.ipynb`
+### 2. Regional Temperature Analysis
+**File:** `regional-temperature-analysis.ipynb`
 
-Advanced analysis example with:
+Advanced regional analysis notebook with:
 - 🌍 Geographic region classification by station patterns
 - 📊 6 comprehensive visualizations (violin plots, trends, heatmaps)
 - 🌡️ Regional temperature comparisons and seasonal patterns
@@ -65,11 +65,11 @@ Advanced analysis example with:
 - 🗺️ Interactive climate heatmap
 
 ### 3. Standalone Python Script
-**File:** `single-cell.py`
+**File:** `weather-analysis-script.py`
 
 Complete Python script version that can be run independently:
 ```bash
-python3 single-cell.py
+python3 weather-analysis-script.py
 ```
 
 ## 🔧 Authentication Method
@@ -221,13 +221,13 @@ graph TB
 
 ```
 coder-jupyter/
-├── README.md                                    # This documentation
-├── example-weather-complete.ipynb              # Basic weather analysis example
-├── example-temperature-regional-analysis.ipynb # Advanced regional analysis example
-├── single-cell.py                             # Standalone Python script
-├── requirements.txt                           # Python dependencies
-├── .gitignore                                 # Git ignore patterns
-└── CLAUDE.md                                  # Detailed technical guide
+├── README.md                          # This documentation
+├── basic-weather-analysis.ipynb      # Basic weather analysis notebook
+├── regional-temperature-analysis.ipynb # Advanced regional temperature analysis
+├── weather-analysis-script.py        # Standalone Python script
+├── requirements.txt                   # Python dependencies
+├── .gitignore                        # Git ignore patterns
+└── CLAUDE.md                         # Detailed technical guide
 ```
 
 ## 🤝 Contributing

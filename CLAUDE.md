@@ -19,8 +19,8 @@ We've created a complete workflow to:
 
 ### 1. Use the Ready-Made Notebooks
 
-**Main notebook:** `weather-complete.ipynb` - Complete basic weather analysis
-**Advanced analysis:** `temperature-regional-analysis.ipynb` - Regional temperature trends
+**Basic Analysis:** `basic-weather-analysis.ipynb` - Complete starter weather analysis
+**Advanced Analysis:** `regional-temperature-analysis.ipynb` - Regional temperature trends and comparisons
 
 Simply run all cells in order:
 1. **Install packages** (db-dtypes, pyarrow)
@@ -156,9 +156,9 @@ import subprocess
 
 ```
 /home/coder/
-├── weather-complete.ipynb              # Main working notebook - basic analysis
-├── temperature-regional-analysis.ipynb # Advanced regional temperature analysis
-├── single-cell.py                     # Standalone Python script (also works)
+├── basic-weather-analysis.ipynb      # Main working notebook - basic analysis
+├── regional-temperature-analysis.ipynb # Advanced regional temperature analysis
+├── weather-analysis-script.py        # Standalone Python script (also works)
 └── CLAUDE.md                          # This documentation
 ```
 

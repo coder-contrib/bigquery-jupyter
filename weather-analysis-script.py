@@ -1,4 +1,10 @@
-# Copy and paste this entire code block into a single Jupyter cell
+#!/usr/bin/env python3
+"""
+BigQuery Weather Analysis - Standalone Script
+
+Complete weather analysis using Coder external auth and BigQuery public datasets.
+Can be run directly or used as reference for notebook development.
+"""
 
 import sys
 import subprocess
