@@ -5,7 +5,7 @@ A complete Coder workspace template for querying Google BigQuery from Jupyter no
 ![Screenshot of Coder Tasks with Jupyter](./screenshot.png)
 
 > [!NOTE]
-> This is a sample template and the majority of this README, while still accurate, is written with AI. The template itself is written by the Coder team.
+> This is a sample template and the majority of this README, while mostly accurate, is written with AI. The template itself is written by the Coder team.
 
 ## 🎯 Overview
 
