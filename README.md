@@ -1,6 +1,6 @@
 # Coder BigQuery Jupyter Template
 
-A complete Coder workspace template for querying Google BigQuery from Jupyter notebooks with integrated GCP authentication.
+A complete Coder workspace template for querying Google BigQuery from Jupyter notebooks with integrated GCP authentication and AI agents (Claude Code).
 
 ![Screenshot of Coder Tasks with Jupyter](./screenshot.png)
 
