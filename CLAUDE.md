@@ -9,11 +9,36 @@ We've created a complete workflow to:
 - Query the GSOD (Global Summary of the Day) public dataset from BigQuery
 - Analyze and visualize weather patterns with Python
 
-## 📋 Prerequisites
+## 📋 Prerequisites & Setup
 
 - Coder workspace with GCP external authentication configured
 - Jupyter Lab running
 - Python 3.12+ environment
+
+**🔧 IMPORTANT: Before creating new notebooks, ALWAYS examine existing working examples in this directory first!**
+
+### Package Installation Best Practices
+- ✅ **Use established pattern**: Install from `requirements.txt` using `subprocess.check_call()`
+- ❌ **Never use**: Direct `!pip install` commands - they fail in externally managed environments
+- 📁 **Follow examples**: Check `basic-weather-analysis.ipynb` for the correct installation pattern
+
+```python
+# ✅ CORRECT METHOD (use this pattern for externally-managed environments)
+import subprocess
+import sys
+
+# Install ipykernel first if needed
+subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'ipykernel', '--break-system-packages'])
+
+# Install from requirements.txt
+subprocess.check_call([sys.executable, '-m', 'pip', 'install', '-r', 'requirements.txt', '--break-system-packages'])
+
+# Install additional packages
+subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'additional-package', '--break-system-packages'])
+
+# ❌ WRONG METHOD (causes externally-managed-environment errors)
+!pip install pandas matplotlib seaborn
+```
 
 ## 🚀 Quick Start
 
@@ -107,6 +132,12 @@ The notebook includes these visualizations:
 ## 💡 Helpful Prompts for Claude
 
 **🎯 Pro Tip**: Always request analysis to be done in Jupyter notebooks for interactive visualization!
+
+**📚 Development Guidelines for Claude:**
+- **ALWAYS read existing working notebooks first** before creating new ones
+- **Follow the established package installation pattern** from `basic-weather-analysis.ipynb`
+- **Use subprocess.check_call() method** for package installations, never direct !pip commands
+- **Test notebooks** by examining the working examples in this directory
 
 ### Data Exploration (Claude will create notebooks)
 - "Show me temperature trends by geographic region in a notebook"

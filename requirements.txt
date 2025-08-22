@@ -16,5 +16,7 @@ google-oauth2-tool>=0.0.3
 # Additional data science packages (optional)
 jupyter>=1.1.0
 jupyterlab>=4.0.0
+ipykernel>=6.30.0
 scipy>=1.12.0
 scikit-learn>=1.4.0
+plotly>=5.0.0
