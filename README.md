@@ -1,6 +1,8 @@
-# Coder Jupyter BigQuery Integration
+# Coder BigQuery Jupyter Integration
 
 A complete solution for querying Google BigQuery from Jupyter notebooks using Coder's external authentication system.
+
+Part of the [coder-contrib](https://github.com/coder-contrib) collection of community examples and integrations.
 
 ## 🎯 Overview
 
@@ -232,12 +234,16 @@ coder-jupyter/
 
 ## 🤝 Contributing
 
-This is an internal reference implementation. For improvements:
+Contributions are welcome! This is a community example in the coder-contrib organization.
 
-1. Test notebooks thoroughly with various datasets
-2. Update authentication methods if Coder external auth changes
-3. Add new analysis examples following the established patterns
-4. Ensure all code works in fresh Jupyter environments
+To contribute:
+
+1. Fork the repository
+2. Test notebooks thoroughly with various datasets
+3. Update authentication methods if Coder external auth changes
+4. Add new analysis examples following the established patterns
+5. Ensure all code works in fresh Jupyter environments
+6. Submit a pull request with your improvements
 
 ## 📚 Additional Resources
 
