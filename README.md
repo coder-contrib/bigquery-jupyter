@@ -1,5 +1,7 @@
 # Coder BigQuery Jupyter Template
 
+> ![NOTE] This is a sample template and the majority of this README, while still accurate, is written with AI. The template itself is written by the Coder team.
+
 A complete Coder workspace template for querying Google BigQuery from Jupyter notebooks with integrated GCP authentication.
 
 ![Screenshot of Coder Tasks with Jupyter](./screenshot.png)
@@ -35,17 +37,25 @@ This is a **Coder workspace template** (`main.tf`) that provides:
 2. **Access Jupyter Lab** from the workspace dashboard
 3. **Start analyzing** using the pre-loaded weather analysis notebooks
 
-## 🔐 GCP External Authentication Setup
+## 🔐 BigQuery Authentication Setup
 
-**🔑 REQUIRED**: This template requires Coder's external authentication to be configured for Google Cloud Platform.
+**🔑 REQUIRED**: This template uses BigQuery with OpenID Connect (OIDC) authentication through Coder's external auth system.
 
-### Admin Configuration
+### Step 1: Configure BigQuery OIDC
 
-Your Coder administrator must configure the following environment variables for the Coder deployment:
+First, set up BigQuery to accept OIDC tokens from your identity provider:
+
+1. **Enable BigQuery OIDC** in your Google Cloud project
+2. **Configure identity pool** and provider for your Coder instance
+3. **Set up IAM bindings** for BigQuery access
 
 **Required Documentation:**
-- [Coder External Auth Configuration](https://coder.com/docs/external-auth)
-- [Google Cloud OAuth 2.0 Setup](https://cloud.google.com/docs/authentication/oauth)
+- [BigQuery OIDC Authentication](https://cloud.google.com/bigquery/docs/authentication/oidc)
+- [Workload Identity Federation](https://cloud.google.com/iam/docs/workload-identity-federation)
+
+### Step 2: Configure Coder External Auth
+
+Configure your Coder deployment to provide GCP tokens that work with BigQuery OIDC:
 
 ```bash
 CODER_EXTERNAL_AUTH_0_TYPE=gcp
@@ -58,13 +68,20 @@ CODER_EXTERNAL_AUTH_0_DISPLAY_NAME="Google Cloud"
 CODER_EXTERNAL_AUTH_0_DISPLAY_ICON="/icon/gcp.png"
 ```
 
-**Template Integration:**
-The `main.tf` workspace template automatically references this external auth configuration with:
+**Additional Documentation:**
+- [Coder External Auth Configuration](https://coder.com/docs/external-auth)
+- [Google Cloud OAuth 2.0 Setup](https://cloud.google.com/docs/authentication/oauth)
+
+### Template Integration
+
+The `main.tf` workspace template automatically uses this external auth configuration:
 ```hcl
 data "coder_external_auth" "gcp" {
   id = "gcp"
 }
 ```
+
+This enables seamless BigQuery access within workspaces using OIDC tokens.
 
 #### User Verification
 
