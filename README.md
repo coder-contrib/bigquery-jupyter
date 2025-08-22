@@ -2,7 +2,7 @@
 
 A complete Coder workspace template for querying Google BigQuery from Jupyter notebooks with integrated GCP authentication.
 
-Part of the [coder-contrib](https://github.com/coder-contrib) collection of community examples and integrations.
+![Screenshot of Coder Tasks with Jupyter](./screenshot.png)
 
 ## 🎯 Overview
 
@@ -20,7 +20,7 @@ This is a **Coder workspace template** (`main.tf`) that provides:
 1. **Deploy the template** to your Coder instance:
    ```bash
    # Upload main.tf as a workspace template
-   coder templates push bigquery-jupyter main.tf
+   coder templates push bigquery-jupyter
    ```
 
 2. **Configure required variables**:
@@ -43,6 +43,10 @@ This is a **Coder workspace template** (`main.tf`) that provides:
 
 Your Coder administrator must configure the following environment variables for the Coder deployment:
 
+**Required Documentation:**
+- [Coder External Auth Configuration](https://coder.com/docs/external-auth)
+- [Google Cloud OAuth 2.0 Setup](https://cloud.google.com/docs/authentication/oauth)
+
 ```bash
 CODER_EXTERNAL_AUTH_0_TYPE=gcp
 CODER_EXTERNAL_AUTH_0_CLIENT_ID="your-gcp-client-id"
@@ -61,10 +65,6 @@ data "coder_external_auth" "gcp" {
   id = "gcp"
 }
 ```
-
-**Required Documentation:**
-- [Coder External Auth Configuration](https://coder.com/docs/external-auth)
-- [Google Cloud OAuth 2.0 Setup](https://cloud.google.com/docs/authentication/oauth)
 
 #### User Verification
 
