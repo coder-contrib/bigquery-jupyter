@@ -1,42 +1,72 @@
-# Coder BigQuery Jupyter Integration
+# Coder BigQuery Jupyter Template
 
-A complete solution for querying Google BigQuery from Jupyter notebooks using Coder's external authentication system.
+A complete Coder workspace template for querying Google BigQuery from Jupyter notebooks with integrated GCP authentication.
 
 Part of the [coder-contrib](https://github.com/coder-contrib) collection of community examples and integrations.
 
 ## 🎯 Overview
 
-This repository demonstrates how to:
-- Authenticate with Google Cloud Platform using Coder's external auth
-- Query BigQuery public datasets from Jupyter notebooks
-- Perform comprehensive weather data analysis with visualizations
-- Handle common authentication and dependency issues
+This is a **Coder workspace template** (`main.tf`) that provides:
+- 🔐 **GCP External Authentication** - Pre-configured Google Cloud integration
+- 📊 **Jupyter Lab** - Ready-to-use data science environment
+- 🌤️ **BigQuery Integration** - Access to public weather datasets
+- 🛠️ **Development Tools** - Code-server, JetBrains, and Claude Code
+- ⚡ **Complete Setup** - Everything configured and ready to deploy
 
-## ⚡ Quick Start
+## ⚡ Template Deployment
 
-### Prerequisites
+### For Coder Admins
 
-1. **Coder workspace** with GCP external authentication configured
-2. **Jupyter Lab** running in your workspace
-3. **Python 3.12+** environment
-
-### Installation
-
-1. **Clone this repository** into your Coder workspace
-2. **Install dependencies** from requirements.txt:
+1. **Deploy the template** to your Coder instance:
    ```bash
-   pip install -r requirements.txt
+   # Upload main.tf as a workspace template
+   coder templates push bigquery-jupyter main.tf
    ```
-   *Note: Example notebooks also handle installation automatically*
 
-### External Authentication Setup Required
+2. **Configure required variables**:
+   - `anthropic_api_key` - For Claude Code integration
+   - `docker_socket` - Docker connection (optional)
 
-**🔑 IMPORTANT**: This solution requires Coder's external authentication to be properly configured for Google Cloud Platform.
+3. **Ensure GCP External Auth** is configured (see configuration section below)
 
-Your Coder admin must have:
-- Configured GCP external auth provider
-- Granted appropriate BigQuery permissions
-- Enabled public dataset access
+### For Users
+
+1. **Create workspace** from the `bigquery-jupyter` template
+2. **Access Jupyter Lab** from the workspace dashboard
+3. **Start analyzing** using the pre-loaded weather analysis notebooks
+
+## 🔐 GCP External Authentication Setup
+
+**🔑 REQUIRED**: This template requires Coder's external authentication to be configured for Google Cloud Platform.
+
+### Admin Configuration
+
+Your Coder administrator must configure the following environment variables for the Coder deployment:
+
+```bash
+CODER_EXTERNAL_AUTH_0_TYPE=gcp
+CODER_EXTERNAL_AUTH_0_CLIENT_ID="your-gcp-client-id"
+CODER_EXTERNAL_AUTH_0_CLIENT_SECRET="your-gcp-client-secret"
+CODER_EXTERNAL_AUTH_0_SCOPES="https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/sqlservice.login https://www.googleapis.com/auth/bigquery"
+CODER_EXTERNAL_AUTH_0_AUTH_URL="https://accounts.google.com/o/oauth2/v2/auth"
+CODER_EXTERNAL_AUTH_0_TOKEN_URL="https://oauth2.googleapis.com/token"
+CODER_EXTERNAL_AUTH_0_DISPLAY_NAME="Google Cloud"
+CODER_EXTERNAL_AUTH_0_DISPLAY_ICON="/icon/gcp.png"
+```
+
+**Template Integration:**
+The `main.tf` workspace template automatically references this external auth configuration with:
+```hcl
+data "coder_external_auth" "gcp" {
+  id = "gcp"
+}
+```
+
+**Required Documentation:**
+- [Coder External Auth Configuration](https://coder.com/docs/external-auth)
+- [Google Cloud OAuth 2.0 Setup](https://cloud.google.com/docs/authentication/oauth)
+
+#### User Verification
 
 To verify your setup works:
 ```bash
@@ -207,43 +237,49 @@ subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'package-name'])
 4. **Error Handling**: Import `subprocess` in cells where it's used
 5. **Performance**: Use LIMIT clauses for initial exploration, then scale up
 
-## 🏗️ Architecture
+## 🏗️ Template Architecture
 
 ```mermaid
 graph TB
-    A[Coder Workspace] --> B[External Auth Provider]
-    B --> C[GCP Access Token]
-    C --> D[BigQuery Client]
-    D --> E[Public Datasets]
-    E --> F[Jupyter Notebook]
-    F --> G[Data Visualization]
+    A[main.tf Template] --> B[Coder Workspace]
+    B --> C[GCP External Auth]
+    C --> D[BigQuery Access]
+    D --> E[Jupyter Lab]
+    E --> F[Analysis Notebooks]
+    F --> G[Weather Visualizations]
+    
+    H[Docker Container] --> B
+    I[Claude Code] --> B
+    J[Code Server] --> B
+    K[Git Clone Module] --> B
 ```
 
 ## 📁 Repository Structure
 
 ```
-coder-jupyter/
-├── README.md                          # This documentation
-├── basic-weather-analysis.ipynb      # Basic weather analysis notebook
-├── regional-temperature-analysis.ipynb # Advanced regional temperature analysis
+bigquery-jupyter/
+├── README.md                          # Template documentation
+├── main.tf                           # 🎯 Coder workspace template (deploy this!)
+├── basic-weather-analysis.ipynb      # Sample weather analysis notebook
+├── regional-temperature-analysis.ipynb # Advanced regional analysis notebook
 ├── weather-analysis-script.py        # Standalone Python script
-├── requirements.txt                   # Python dependencies
+├── requirements.txt                   # Python dependencies for notebooks
 ├── .gitignore                        # Git ignore patterns
-└── CLAUDE.md                         # Detailed technical guide
+└── CLAUDE.md                         # Detailed usage guide for workspaces
 ```
 
 ## 🤝 Contributing
 
-Contributions are welcome! This is a community example in the coder-contrib organization.
+Contributions are welcome! This is a community template in the coder-contrib organization.
 
 To contribute:
 
-1. Fork the repository
-2. Test notebooks thoroughly with various datasets
-3. Update authentication methods if Coder external auth changes
-4. Add new analysis examples following the established patterns
-5. Ensure all code works in fresh Jupyter environments
-6. Submit a pull request with your improvements
+1. **Fork the repository**
+2. **Test the template** by deploying to a Coder instance
+3. **Verify notebooks** work in fresh workspace environments
+4. **Update template** if Coder provider versions change
+5. **Add new features** following established patterns
+6. **Submit a pull request** with your improvements
 
 ## 📚 Additional Resources
 
@@ -254,6 +290,6 @@ To contribute:
 
 ---
 
-**🎉 Ready to explore weather data with BigQuery!**
+**🎉 Ready to deploy your BigQuery Jupyter template!**
 
-*This solution successfully handles Coder external auth, BigQuery authentication, and provides comprehensive weather analysis capabilities in Jupyter notebooks.*
+*This Coder workspace template provides everything needed for BigQuery data analysis with integrated GCP authentication, development tools, and sample notebooks.*
