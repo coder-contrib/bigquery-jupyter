@@ -18,6 +18,15 @@ This repository demonstrates how to:
 2. **Jupyter Lab** running in your workspace
 3. **Python 3.12+** environment
 
+### Installation
+
+1. **Clone this repository** into your Coder workspace
+2. **Install dependencies** from requirements.txt:
+   ```bash
+   pip install -r requirements.txt
+   ```
+   *Note: Example notebooks also handle installation automatically*
+
 ### External Authentication Setup Required
 
 **🔑 IMPORTANT**: This solution requires Coder's external authentication to be properly configured for Google Cloud Platform.
@@ -33,22 +42,22 @@ coder external-auth access-token gcp
 ```
 This should return a valid access token.
 
-## 📚 Available Notebooks
+## 📚 Example Notebooks
 
 ### 1. Basic Weather Analysis
-**File:** `weather-complete.ipynb`
+**File:** `example-weather-complete.ipynb`
 
-Complete starter notebook featuring:
-- ✅ Package installation and authentication setup
+Complete starter example featuring:
+- ✅ Automatic requirements.txt installation and authentication setup
 - 📊 Basic GSOD dataset querying (500 records)
 - 🌡️ Temperature, precipitation, wind, and visibility analysis
 - 📈 Weather station distribution analysis
 - 🎨 Multiple visualization types
 
 ### 2. Advanced Regional Temperature Analysis
-**File:** `temperature-regional-analysis.ipynb`
+**File:** `example-temperature-regional-analysis.ipynb`
 
-Advanced analysis notebook with:
+Advanced analysis example with:
 - 🌍 Geographic region classification by station patterns
 - 📊 6 comprehensive visualizations (violin plots, trends, heatmaps)
 - 🌡️ Regional temperature comparisons and seasonal patterns
@@ -85,12 +94,16 @@ creds = credentials.Credentials(token=access_token)
 client = bigquery.Client(credentials=creds, project='coder-vertex-demos')
 ```
 
-## 📋 Required Dependencies
+## 📋 Dependencies
 
-The notebooks automatically install required packages:
+Install all dependencies using:
+```bash
+pip install -r requirements.txt
+```
+
+Or the example notebooks automatically install from requirements.txt:
 ```python
-subprocess.check_call([sys.executable, '-m', 'pip', 'install', 
-                      'db-dtypes', 'pyarrow', 'google-cloud-bigquery'])
+subprocess.check_call([sys.executable, '-m', 'pip', 'install', '-r', 'requirements.txt'])
 ```
 
 **Key packages:**
@@ -208,11 +221,13 @@ graph TB
 
 ```
 coder-jupyter/
-├── README.md                           # This documentation
-├── weather-complete.ipynb              # Main working notebook
-├── temperature-regional-analysis.ipynb # Advanced regional analysis
-├── single-cell.py                     # Standalone Python script
-└── CLAUDE.md                          # Detailed technical guide
+├── README.md                                    # This documentation
+├── example-weather-complete.ipynb              # Basic weather analysis example
+├── example-temperature-regional-analysis.ipynb # Advanced regional analysis example
+├── single-cell.py                             # Standalone Python script
+├── requirements.txt                           # Python dependencies
+├── .gitignore                                 # Git ignore patterns
+└── CLAUDE.md                                  # Detailed technical guide
 ```
 
 ## 🤝 Contributing
