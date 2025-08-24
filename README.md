@@ -4,8 +4,13 @@ A complete Coder workspace template for querying Google BigQuery from Jupyter no
 
 ![Screenshot of Coder Tasks with Jupyter](./screenshot.png)
 
-> [!NOTE]
-> This is a sample template and the majority of this README, while mostly accurate, is written with AI. The template itself is written by the Coder team.
+## 📹 Watch a demo
+
+Before deploying, watch a video explaining how this works!
+
+| [![Demo: Jupyter, BigQuery, and Coder Tasks](https://cdn.loom.com/sessions/thumbnails/153e90469fb04c2db1ec0143beb32bde-c993637e59fad5f4-full-play.gif)](https://www.loom.com/share/153e90469fb04c2db1ec0143beb32bde) | [![Behind the Scenes: Template Code & Config](https://cdn.loom.com/sessions/thumbnails/bb3b150c8d5b48b5acc426a661490b39-2adec8ea5b888348-full-play.gif)](https://www.loom.com/share/bb3b150c8d5b48b5acc426a661490b39) |
+|---|---|
+| <div align="center">[**Demo:** Demo: Jupyter, BigQuery, and Coder Tasks](https://www.loom.com/share/153e90469fb04c2db1ec0143beb32bde)</div> | <div align="center">[**Behind the Scenes**: Template Code & Config](https://www.loom.com/share/bb3b150c8d5b48b5acc426a661490b39)</div> |
 
 ## 🎯 Overview
 
@@ -15,6 +20,9 @@ This is a **Coder workspace template** (`main.tf`) that provides:
 - 🌤️ **BigQuery Integration** - Access to public weather datasets
 - 🛠️ **Development Tools** - Code-server, JetBrains, and Claude Code
 - ⚡ **Complete Setup** - Everything configured and ready to deploy
+
+> [!NOTE]
+> This majority of this README, while mostly accurate, is written with AI. The template itself is written by the Coder team.
 
 ## ⚡ Template Deployment
 
