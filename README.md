@@ -23,7 +23,7 @@ Before deploying, watch a video explaining how this works!
 
 | [![Demo: Jupyter, BigQuery, and Coder Tasks](https://cdn.loom.com/sessions/thumbnails/153e90469fb04c2db1ec0143beb32bde-c993637e59fad5f4-full-play.gif)](https://www.loom.com/share/153e90469fb04c2db1ec0143beb32bde) | [![Behind the Scenes: Template Code & Config](https://cdn.loom.com/sessions/thumbnails/bb3b150c8d5b48b5acc426a661490b39-2adec8ea5b888348-full-play.gif)](https://www.loom.com/share/bb3b150c8d5b48b5acc426a661490b39) |
 |---|---|
-| <div align="center">[**Demo:** Demo: Jupyter, BigQuery, and Coder Tasks](https://www.loom.com/share/153e90469fb04c2db1ec0143beb32bde)</div> | <div align="center">[**Behind the Scenes**: Template Code & Config](https://www.loom.com/share/bb3b150c8d5b48b5acc426a661490b39)</div> |
+| <div align="center">[**Demo:** Jupyter, BigQuery, and Coder Tasks](https://www.loom.com/share/153e90469fb04c2db1ec0143beb32bde)</div> | <div align="center">[**Behind the Scenes**: Template Code & Config](https://www.loom.com/share/bb3b150c8d5b48b5acc426a661490b39)</div> |
 
 ## ⚡ Template Deployment
 
